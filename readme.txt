@@ -55,11 +55,6 @@ You can contact us for any questions, feedback and requests at info@bublaa.com
 
 == Screenshots ==
 
-1. bubble_discuss.jpg
-2. bubble_images.jpg
-3. bubble_profile.jpg
-4. bubble_video.jpg
-
 == Changelog ==
 
 = 1.0 =
