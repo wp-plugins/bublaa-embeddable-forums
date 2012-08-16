@@ -32,7 +32,7 @@ You can see how a Bublaa Forum works at http://bublaa.com/embed
 * Embed the forum into a website with a string of HTML code
 * Edit forum details and settings (basic information, security and joining)
 
-== Installation ==
+== Manual Installation ==
 
 This section describes how to install the plugin and get it working.
 
@@ -48,6 +48,9 @@ If you choose to use bublaatemp.php file, put it to the theme folder you are usi
 1. Register to bublaa
 2. Create a new forum (or a 'bubble')
 3. Change the name of the 'bubble' in the bublaa.php plugin file. You can also configure other options in the same file.
+
+
+Wordpress Admin Panel installation coming soon.
 
 == Frequently Asked Questions ==
 
