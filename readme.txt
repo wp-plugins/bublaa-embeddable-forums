@@ -55,6 +55,11 @@ You can contact us for any questions, feedback and requests at info@bublaa.com
 
 == Screenshots ==
 
+1. Discussions
+2. Post with images
+3. Profiles
+4. Post with a video
+
 == Changelog ==
 
 = 1.0 =
