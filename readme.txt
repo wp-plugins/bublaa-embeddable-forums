@@ -32,7 +32,9 @@ You can see how a Bublaa Forum works at http://bublaa.com/embed
 * Embed the forum into a website with a string of HTML code
 * Edit forum details and settings (basic information, security and joining)
 
-== Manual Installation ==
+== Installation ==
+
+###Manual installation
 
 This section describes how to install the plugin and get it working.
 
