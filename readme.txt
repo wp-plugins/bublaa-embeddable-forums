@@ -3,7 +3,7 @@ Contributors: bublaa
 Tags: community, embed, embedded forum, forum, forums, forum plugin, bublaa, bublaa forums, board, boards, bulletin, message board, message boards, bulletin board, bulletin boards, discussions, discussions, fast, easy, free
 Requires at least: 2.0.2
 Tested up to: 3.4.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ You can see how a Bublaa Forum works at http://bublaa.com/embed
 * Assign 'sticky topics' that will remain on top of the topic list
 * Assign 'closed topics' to close and re-open topics for posting
 * Delete topics and posts
-* Embed the forum into a website with a string of HTML code
+* Embed the forum into a website without any knowledge of HTML
 * Edit forum details and settings (basic information, security and joining)
 
 == Installation ==
@@ -38,21 +38,16 @@ You can see how a Bublaa Forum works at http://bublaa.com/embed
 
 This section describes how to install the plugin and get it working.
 
-1. Unzip the plugin package using 7zip or any other unpacking software.
-2. Navigate to '/wp-content/plugins' directory and create a new folder named 'bublaa'.
-3. Copy bublaa.php file to the folder you just created.
-4. Activate the plugin through the 'Plugins' menu in WordPress.
-5. Place '<?php init_embedded_bublaa(); ?>' into your template or use pre-made bublaatemp.php template file. 
-If you choose to use bublaatemp.php file, put it to the theme folder you are using.
+1. Download the bublaa plugin
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Create a new page for your forum to display on
+4. Go to Bublaa Plugin settings on your WordPress dashboard and type in the title of the page you just created
 
 = After you have installed the plugin =
 
 1. Register to bublaa
 2. Create a new forum (or a 'bubble')
-3. Change the name of the 'bubble' in the bublaa.php plugin file. You can also configure other options in the same file.
-
-
-Wordpress Admin Panel installation coming soon.
+3. Change the name of the 'bubble' Bublaa Plugin settings on your WordPress dashboard. You can also configure other options there.
 
 == Frequently Asked Questions ==
 
@@ -66,6 +61,9 @@ You can contact us for any questions, feedback and requests at info@bublaa.com
 4. Post with a video
 
 == Changelog ==
+
+= 1.1 =
+* Installation through WordPress dashboard
 
 = 1.0 =
 * Plugin released.

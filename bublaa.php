@@ -1,45 +1,25 @@
 <?php
-	/*
-	Plugin Name: Bublaa Embeddable Forums
-	Plugin URI: http://bublaa.com
-	Description: Adds a Bublaa forum to your WordPress site
-	Author: bublaa
-	Version: 1.0
-	Author URI: http://bublaa.com
-	*/
-	
-	function init_embedded_bublaa (){
-		
-		// Options:
-			$height = '700px'; 			// Height in pixels or percentage
-			$width = 'auto'; 			// Width in pixels, percentage or auto
-			$bubble = 'about bublaa'; 	// The name of your bubble (You must change this!)
-			$autoresize = 'true'; 		// true or false
-		
-		// Do not edit after this
-		echo "
-			<div id='bublaa'></div>
-			<style type='text/css'>
-				#bublaa 
-				{ 
-				    height: '". $height ."'; 
-				    width: '". $width ."';
-				}
-				</style>
-				<script type='text/javascript'>
-				window.bublaa = {
-				    config : {
-				        bubble : '". $bubble ."',
-				        autoresize : '". $autoresize ."',
-				        serviceHost : 'http://bublaa.com'
-				    }
-				};
-			(function() { var b = document.createElement('script');
-			    b.type = 'text/javascript'; b.async = true;
-			    b.src = 'http://bublaa.com/js/embedded.js';
-			    var s = document.getElementsByTagName('script')[0];
-			    s.parentNode.insertBefore(b, s); })();
-			</script>
-		";
-	}
+/*
+Plugin Name: Bublaa Embeddable Forums
+Plugin URI: http://bublaa.com/!#/bubble/about-bublaa
+Description: Adds a Bublaa forum to your WordPress site
+Author: Bublaa Team
+Version: 1.1
+Author URI: http://bublaa.com/!#/bubble/about-bublaa
+*/
+
+include_once dirname(__FILE__) . '/functions.php';
+
+function init_bublaa() {
+    bublaa_init_embedded();
+}
+
+add_action('template_redirect', 'bublaa_load_template');
+
+if ( is_admin() ) {
+    add_action('admin_menu', 'bublaa_menu');
+}
+
+register_activation_hook(__FILE__, 'bublaa_activate');
+register_deactivation_hook(__FILE__, 'bublaa_deactivate');
 ?>
