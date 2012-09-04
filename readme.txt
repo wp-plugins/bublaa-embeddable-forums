@@ -34,7 +34,7 @@ You can see how a Bublaa Forum works at http://bublaa.com/embed
 
 == Installation ==
 
-###Manual installation
+###Installation
 
 This section describes how to install the plugin and get it working.
 
