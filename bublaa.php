@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Bublaa Embeddable Forums
-Plugin URI: http://bublaa.com/!#/bubble/about-bublaa
+Plugin URI: http://bublaa.com/#!/bubble/about-bublaa
 Description: Adds a Bublaa forum to your WordPress site
 Author: Bublaa Team
 Version: 1.1
-Author URI: http://bublaa.com/!#/bubble/about-bublaa
+Author URI: http://bublaa.com/#!/bubble/about-bublaa
 */
 
 include_once dirname(__FILE__) . '/functions.php';
