@@ -40,7 +40,7 @@ This section describes how to install the plugin and get it working.
 
 1. Download the bublaa plugin
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Create a new page for your forum to display on
+3. Create a new page for your forum to display on (recommended min width 800px) 
 4. Go to Bublaa Forum settings on your WordPress dashboard and type in the title of the page you just created
 
 = After you have installed the plugin =
