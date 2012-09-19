@@ -41,13 +41,13 @@ This section describes how to install the plugin and get it working.
 1. Download the bublaa plugin
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Create a new page for your forum to display on
-4. Go to Bublaa Plugin settings on your WordPress dashboard and type in the title of the page you just created
+4. Go to Bublaa Forum settings on your WordPress dashboard and type in the title of the page you just created
 
 = After you have installed the plugin =
 
-1. Register to bublaa
+1. Register to http://bublaa.com
 2. Create a new forum (or a 'bubble')
-3. Change the name of the 'bubble' Bublaa Plugin settings on your WordPress dashboard. You can also configure other options there.
+3. Change the name of the 'bubble' Bublaa Forum settings on your WordPress dashboard. You can also configure other options there.
 
 == Frequently Asked Questions ==
 
