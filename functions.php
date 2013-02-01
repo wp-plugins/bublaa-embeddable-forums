@@ -119,8 +119,7 @@ class Bublaa {
     function init_embedded (){
         $options = $this->get_options();
 
-        // $host = "http://bublaa.com";
-        $host = "http://bublaa.local";
+        $host = "http://bublaa.com";
 
         $notFound = "embeddedNotFound";
         $saveNewBubbleToWordpress = "false";
@@ -215,7 +214,7 @@ class Bublaa {
                 foreach ($pages as $page) {
                     if (
                             (
-                                $mb && ( mb_strtolower($page->post_title) == mb_strtolower($options["page_name"])|| mb_strtolower($page->post_name) == mb_strtolower($options["page_name"]))
+                                $mb && ( mb_strtolower($page->post_title) == mb_strtolower($options["page_name"]) || mb_strtolower($page->post_name) == mb_strtolower($options["page_name"]))
                             ) ||
                             (
                                 strtolower($page->post_title) == strtolower($options["page_name"]) || strtolower($page->post_name) == strtolower($options["page_name"])
@@ -334,10 +333,8 @@ class BublaaWidget extends WP_Widget {
     }
 
     function update( $new_instance, $old_instance ) {
-        echo "update";
         $instance = $old_instance;
 
-        print_r($new_instance);
         //Strip tags from title and name to remove HTML
         if(is_numeric( $new_instance['height'] ))
             $instance['height'] = $new_instance['height'];
@@ -364,8 +361,7 @@ class BublaaWidget extends WP_Widget {
         if(!$options['bubble'])
             return;
 
-        $host = "http://bublaa.local";
-        // $host = "http://bublaa.com";
+        $host = "http://bublaa.com";
 
         // final markup to init bublaa
         echo "
