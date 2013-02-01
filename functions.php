@@ -119,7 +119,8 @@ class Bublaa {
     function init_embedded (){
         $options = $this->get_options();
 
-        $host = "http://bublaa.com";
+        // $host = "http://bublaa.com";
+        $host = "http://bublaa.local";
 
         $notFound = "embeddedNotFound";
         $saveNewBubbleToWordpress = "false";
@@ -210,15 +211,24 @@ class Bublaa {
             $pages = get_pages();
             $mb = function_exists("mb_strtolower");
 
-            foreach ($pages as $page) {
-                if (($mb && mb_strtolower($page->page_name) == mb_strtolower($options["page_name"]) ) || (strtolower($page->page_name) == strtolower($options["page_name"]))) {
-                    $options["page_id"] = $page->ID;
-                    unset($options["page_name"]);
-                    $changed = true;
+            if(!isset($options["page_id"])) {
+                foreach ($pages as $page) {
+                    if (
+                            (
+                                $mb && ( mb_strtolower($page->post_title) == mb_strtolower($options["page_name"])|| mb_strtolower($page->post_name) == mb_strtolower($options["page_name"]))
+                            ) ||
+                            (
+                                strtolower($page->post_title) == strtolower($options["page_name"]) || strtolower($page->post_name) == strtolower($options["page_name"])
+                            )
+                        ) {
+                        $options["page_id"] = $page->ID;
+                        $changed = true;
+                    }
                 }
+                if(!isset($options["page_id"]))
+                    $options["page_id"] = $this->create_default_page();
             }
-            if(!isset($options["page_id"]))
-                $options["page_id"] = $this->create_default_page();
+            unset($options["page_name"]);
         }
 
         $newOptions = array_merge($this->defaults(), $options);
@@ -354,7 +364,8 @@ class BublaaWidget extends WP_Widget {
         if(!$options['bubble'])
             return;
 
-        $host = "http://bublaa.com";
+        $host = "http://bublaa.local";
+        // $host = "http://bublaa.com";
 
         // final markup to init bublaa
         echo "
