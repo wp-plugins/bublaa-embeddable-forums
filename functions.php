@@ -158,6 +158,7 @@ class Bublaa {
                 #bublaa
                 {
                     height: " . $options["height"] ."px;
+                    width: 100%;
                 }
             </style>
             <script type='text/javascript'>
@@ -369,6 +370,7 @@ class BublaaWidget extends WP_Widget {
             <style>
                     #bublaa-sidebar {
                         height: " . $instance['height'] ."px;
+                        width: 100%;
                         min-height: 300px;
                         max-height: 600px;
                     }

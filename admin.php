@@ -68,7 +68,8 @@
 <div class="bublaa_row">
     <label>Bubble:</label>
     <input name="bubble"  value="<?php echo $options['bubble'] ?>" type="text" />
-    The name of your forum on <a target="_blank" href="http://www.bublaa.com">bublaa</a> network
+    The name of your forum on <a target="_blank" href="http://www.bublaa.com">bublaa</a> network.
+    <?php if(!$options['bubble'] && $options['page_id']){ ?> <a href="/index.php?page_id=<?php echo $options['page_id']; ?>">Click here to create a new bubble or to add an existing one</a><?php } ?>
 </div>
 
 <div class="bublaa_row">
@@ -91,5 +92,10 @@
 <div class="bublaa_row">
     <input type="submit" value="Update" /><span class="update-status"></span>
 </div>
+<a href="widgets.php">Use the sidebar widget to show the latest forum activity on your frontpage.</a>
 </form>
-<div id="bublaa_help">Need more help? Email us at info@bublaa.com or join us at <a target="_blank" href="http://www.bublaa.com/bubble/about-bublaa">our community</a></div>
+
+<div id="bublaa_help">
+	Need more help? Email us at info@bublaa.com or join us at <a target="_blank" href="http://www.bublaa.com/bubble/about-bublaa">our community</a>
+</div>
+

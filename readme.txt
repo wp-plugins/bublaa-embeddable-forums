@@ -3,7 +3,7 @@ Contributors: bublaa
 Tags: community, embed, embedded forum, forum, forums, forum plugin, bublaa, bublaa forums, board, boards, bulletin, message board, message boards, bulletin board, bulletin boards, discussions, discussions, fast, easy, free
 Requires at least: 2.0.2
 Tested up to: 3.4.1
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,23 +15,28 @@ Bublaa Embeddable Forums is an easy and fast way to add a forum to your website.
 
 You can see how a Bublaa Forum works at http://bublaa.com/embed
 
+= Sidebar Widget =
+This plugin comes with a sidebar widget for displaying latest topics and posts.
+
 = Main Features =
 * Embed the forum into a website without any knowledge of HTML
-* Email notifications
-* Mobile support for Android and Iphone
 * Edit forum details and settings (basic information, security and joining)
 * Attract traffic and users from the bublaa network by posting interesting content
-* Continious support for bugs and feature requests
+* Continuous support for bugs and feature requests
 * Constantly improving spam support
+* NEW! Mobile support for Android and iPhone
+* NEW! Email notifications
 
 = Interface =
 * Simple interface for browsing topics and posts
 * Use a WYSIWYG editor to compose topics and posts
 * Topics and posts are updated in real time for all users
-* Quick search
+* NEW! Language support (english, finnish + more to come)
+* NEW! Quick search
 
 = Social =
 * Share topics and posts on Facebook, Twitter and Google+
+* Option to sign up and login via Facebook (Facebook Connect)
 * 'Like' and 'diss' topics and posts
 * Assign favourite topics for an even easier way to follow your favourite discussions
 * Follow interesting users
@@ -65,6 +70,9 @@ You can contact us for any questions, feedback and requests at info@bublaa.com o
 4. View of the member
 
 == Changelog ==
+= 1.2.2 =
+* Description changes and improved installation process
+
 = 1.2.1 =
 * Fixed upgrading issues
 
