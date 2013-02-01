@@ -210,15 +210,24 @@ class Bublaa {
             $pages = get_pages();
             $mb = function_exists("mb_strtolower");
 
-            foreach ($pages as $page) {
-                if (($mb && mb_strtolower($page->page_name) == mb_strtolower($options["page_name"]) ) || (strtolower($page->page_name) == strtolower($options["page_name"]))) {
-                    $options["page_id"] = $page->ID;
-                    unset($options["page_name"]);
-                    $changed = true;
+            if(!isset($options["page_id"])) {
+                foreach ($pages as $page) {
+                    if (
+                            (
+                                $mb && ( mb_strtolower($page->post_title) == mb_strtolower($options["page_name"]) || mb_strtolower($page->post_name) == mb_strtolower($options["page_name"]))
+                            ) ||
+                            (
+                                strtolower($page->post_title) == strtolower($options["page_name"]) || strtolower($page->post_name) == strtolower($options["page_name"])
+                            )
+                        ) {
+                        $options["page_id"] = $page->ID;
+                        $changed = true;
+                    }
                 }
+                if(!isset($options["page_id"]))
+                    $options["page_id"] = $this->create_default_page();
             }
-            if(!isset($options["page_id"]))
-                $options["page_id"] = $this->create_default_page();
+            unset($options["page_name"]);
         }
 
         $newOptions = array_merge($this->defaults(), $options);
@@ -324,10 +333,8 @@ class BublaaWidget extends WP_Widget {
     }
 
     function update( $new_instance, $old_instance ) {
-        echo "update";
         $instance = $old_instance;
 
-        print_r($new_instance);
         //Strip tags from title and name to remove HTML
         if(is_numeric( $new_instance['height'] ))
             $instance['height'] = $new_instance['height'];
