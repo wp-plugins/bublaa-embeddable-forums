@@ -376,7 +376,7 @@ class BublaaWidget extends WP_Widget {
                     }
             </style>
             <script type='text/javascript'>
-                window.sidebar = {
+                window.bublaa = {
                     config : {
                         bubble     : '" . $options["bubble"] ."',
                         serviceHost: '" . $host ."',
