@@ -62,7 +62,7 @@
 			}
 		 ?>
 	</select>
-	Where you want the forum to appear on
+	The page you want the forum to appear on.
 </div>
 
 <div class="bublaa_row">
@@ -75,13 +75,13 @@
 <div class="bublaa_row">
     <label>Height:</label>
     <input name="height"  value="<?php echo $options['height'] ?>" type="text" />
-    Number of pixels
+    The height of your forum in pixels.
 </div>
 
 <div class="bublaa_row">
     <label>Autoresize:</label>
     <input name="autoresize"  value="false" <?php if(isset($options['autoresize']) && $options['autoresize'] == true) { ?> checked="checked" <?php } ?> type="checkbox" />
-    Will always strech bublaa to the fit the window and overrule the "height" value when loaded
+    Enabling this will strech the forum to fit the window and overrule the "Height" value.
 </div>
 
 <div class="bublaa_row">
@@ -90,12 +90,12 @@
 </div>
 
 <div class="bublaa_row">
-    <input type="submit" value="Update" /><span class="update-status"></span>
+    <input type="submit" value="Save All Changes" /><span class="update-status"></span>
 </div>
-<a href="widgets.php">Use the sidebar widget to show the latest forum activity on your frontpage.</a>
+<a href="widgets.php">Use the bublaa sidebar widget to show the latest forum activity on your front page</a>
 </form>
 
 <div id="bublaa_help">
-	Need more help? Email us at info@bublaa.com or join us at <a target="_blank" href="http://www.bublaa.com/bubble/about-bublaa">our community</a>
+	Need more help? Join us at <a target="_blank" href="http://www.bublaa.com/bubble/about-bublaa">our community</a> Email us at info@bublaa.com
 </div>
 

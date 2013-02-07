@@ -179,6 +179,7 @@ class Bublaa {
                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(b, s);
                 })();
             </script>
+            <noscript>Your browser does not support JavaScript!</noscript>
         ";
     }
 
@@ -330,7 +331,7 @@ class BublaaWidget extends WP_Widget {
      */
     function BublaaWidget() {
         $widget_ops = array( 'height' => 600 );
-        parent::__construct( false, 'Bublaa Latest Activity Widget', $widget_ops );
+        parent::__construct( false, 'Bublaa - Latest Activity', $widget_ops );
     }
 
     function update( $new_instance, $old_instance ) {
@@ -376,7 +377,7 @@ class BublaaWidget extends WP_Widget {
                     }
             </style>
             <script type='text/javascript'>
-                window.sidebar = {
+                window.bublaa = {
                     config : {
                         bubble     : '" . $options["bubble"] ."',
                         serviceHost: '" . $host ."',

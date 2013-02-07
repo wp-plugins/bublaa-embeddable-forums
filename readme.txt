@@ -2,8 +2,8 @@
 Contributors: bublaa
 Tags: community, embed, embedded forum, forum, forums, forum plugin, bublaa, bublaa forums, board, boards, bulletin, message board, message boards, bulletin board, bulletin boards, discussions, discussions, fast, easy, free
 Requires at least: 2.0.2
-Tested up to: 3.4.1
-Stable tag: 1.2.2
+Tested up to: 3.5.1
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,8 @@ You can contact us for any questions, feedback and requests at info@bublaa.com o
 4. View of the member
 
 == Changelog ==
+= 1.2.3 =
+* Compatible up to 3.5.1
 = 1.2.2 =
 * Description changes and improved installation process
 
