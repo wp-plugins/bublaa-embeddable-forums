@@ -43,7 +43,7 @@ class Bublaa {
         if(is_null($page))
             return;
 
-        echo '<div class="updated"><p>Bublaa created a new page for your forum: <a href="/index.php?page_id=' . $page->ID . '">' . $page->post_title . '</a></p></div>';
+        echo '<div class="updated"><p>Bublaa created a new page for your forum: <a href="' . get_page_link($page->ID) . '">' . $page->post_title . '</a></p></div>';
         $options["page_changed"] = false;
         update_option('bublaa-plugin-options', $options);
     }
@@ -381,7 +381,7 @@ class BublaaWidget extends WP_Widget {
                     config : {
                         bubble     : '" . $options["bubble"] ."',
                         serviceHost: '" . $host ."',
-                        embeddedUrl: '" . get_site_url() . "/index.php?p=" . $options['page_id'] ."'
+                        embeddedUrl: '" . get_page_link($options['page_id']) ."'
                     }
                 };
 

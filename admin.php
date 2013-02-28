@@ -69,7 +69,7 @@
     <label>Bubble:</label>
     <input name="bubble"  value="<?php echo $options['bubble'] ?>" type="text" />
     The name of your forum on <a target="_blank" href="http://www.bublaa.com">bublaa</a> network.
-    <?php if(!$options['bubble'] && $options['page_id']){ ?> <a href="/index.php?page_id=<?php echo $options['page_id']; ?>">Click here to create a new bubble or to add an existing one</a><?php } ?>
+    <?php if(!$options['bubble'] && $options['page_id']){ ?> <a href="<?php echo get_page_link($options['page_id']); ?>">Click here to create a new bubble or to add an existing one</a><?php } ?>
 </div>
 
 <div class="bublaa_row">
