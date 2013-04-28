@@ -4,7 +4,7 @@ Plugin Name: Bublaa Embeddable Forums
 Plugin URI: http://bublaa.com/#!/bubble/about-bublaa
 Description: Adds a Bublaa forum to your WordPress site
 Author: Bublaa Team
-Version: 1.2.4.1
+Version: 1.2.4.2
 Author URI: http://bublaa.com/#!/bubble/about-bublaa
 */
 
