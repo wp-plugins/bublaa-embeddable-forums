@@ -1,6 +1,6 @@
 === bublaa forum and comments ===
 Contributors: bublaa
-Tags: bublaa, board, bulletin, comments, community, conversation, discussions, email, embed, embeddable, forum, hosted, message, mobile, network, notification, rich text, post, social, thread, topic, widget, wysiwyg
+Tags: bublaa, board, bulletin, comments, community, conversation, discussions, email, embed, embeddable, forum, hosted, message, mobile, network, notification, post, social, thread, topic, widget, wysiwyg
 Requires at least: 2.0.2
 Tested up to: 3.5.1
 Stable tag: 2.0
