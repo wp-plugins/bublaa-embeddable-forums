@@ -34,7 +34,7 @@ With bublaa you can stop worrying about WordPress updates because your forum and
 * Search-engine friendly
 * Support for bugs and requests
 
-If you have any questions or feedback, feel encouraged to join us at [about bublaa] forum.
+If you have any questions or feedback, feel encouraged to join us at [about bublaa forum](http://bublaa.com/#!/bubble/about-bublaa).
 
 == Installation ==
 
@@ -48,7 +48,7 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-You can contact us for any questions, feedback and requests at info@bublaa.com or at http://bublaa.com/bubble/about-bublaa
+You can contact us for any questions, feedback and requests at info@bublaa.com or at [about bublaa forum](http://bublaa.com/#!/bubble/about-bublaa)
 
 == Screenshots ==
 
