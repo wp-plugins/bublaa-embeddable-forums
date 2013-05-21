@@ -48,7 +48,7 @@ This section describes how to install the plugin and get it working.
 
 == Frequently Asked Questions ==
 
-You can contact us for any questions, feedback and requests at info@bublaa.com or at http://bublaa.com/bubble/about-bublaa
+You can contact us for any questions, feedback and requests at info@bublaa.com or at [http://bublaa.com/bubble/about-bublaa]
 
 == Screenshots ==
 
