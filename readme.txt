@@ -1,52 +1,40 @@
-=== Bublaa Embeddable Forums ===
+=== bublaa forum and comments ===
 Contributors: bublaa
-Tags: community, embed, embedded forum, forum, forums, forum plugin, bublaa, bublaa forums, board, boards, bulletin, message board, message boards, bulletin board, bulletin boards, discussions, discussions, fast, easy, free
+Tags: bublaa, board, bulletin, comments, community, conversation, discussions, email, embed, embeddable, forum, hosted, message, mobile, network, notification, rich text, post, social, thread, topic, widget, wysiwyg
 Requires at least: 2.0.2
 Tested up to: 3.5.1
-Stable tag: 1.2.4.2
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Embed a Bublaa Forum into your website. Fast to create, easy to use and available to you for free.
+Embed a bublaa forum into your site and replace your comment system with bublaa comments (optional).
 
 == Description ==
 
-Bublaa Embeddable Forums is an easy and fast way to add a forum to your website. With Bublaa Embeddable Forums you will never have to worry about hosting, software updates, databases or security issues. It's the complete package for anyone looking for a smart way to organize discussions.
+Bublaa adds unique real-time discussions to your website. It combines forums and comments so that you are able to build a discussion community like never before on one platform. The plugin comes with three tools that work seamlessly together in real-time.
 
-You can see how a Bublaa Forum works at http://bublaa.com/embed
+= bublaa forum =
+Embed a forum into your site with bublaa forum. The unique interface makes it easy to navigate and have real-time discussions. See a live demo [here - http://bublaa.com/plugins/forum/].
 
-= Sidebar Widget =
-This plugin comes with a sidebar widget for displaying latest topics and posts.
+= bublaa comments =
+Connect articles and your forum with bublaa comments. Write beautiful comments with rich text, pictures and video. See a live demo [here - http://bublaa.com/plugins/comments/].
+
+= bublaa activity =
+Display active discussions on any page with bublaa activity widget. Drive even more people to the discussions. See a live demo [here - http://bublaa.com/plugins/activity/].
+
+With bublaa you can stop worrying about WordPress updates because your forum and comments are hosted with us. All public forums and comments are organized into a bublaa network that allows you to attract more people to your discussions and website.
 
 = Main Features =
-* Embed the forum into a website without any knowledge of HTML
-* Edit forum details and settings (basic information, security and joining)
-* Attract traffic and users from the bublaa network by posting interesting content
-* Continuous support for bugs and feature requests
-* Constantly improving spam support
-* NEW! Mobile support for Android and iPhone
-* NEW! Email notifications
+* Unique forum interface
+* Rich text, pictures, video and link preview
+* Email notifications
+* Moderation and admin tools
+* Social login and sharing
+* Mobile support
+* Search-engine friendly
+* Support for bugs and requests
 
-= Interface =
-* Simple interface for browsing topics and posts
-* Use a WYSIWYG editor to compose topics and posts
-* Topics and posts are updated in real time for all users
-* NEW! Language support (english, finnish + more to come)
-* NEW! Quick search
-
-= Social =
-* Share topics and posts on Facebook, Twitter and Google+
-* Option to sign up and login via Facebook (Facebook Connect)
-* 'Like' and 'diss' topics and posts
-* Assign favourite topics for an even easier way to follow your favourite discussions
-* Follow interesting users
-
-= Moderating =
-* Assign multiple moderators
-* Assign 'sticky topics' that will remain on top of the topic list
-* Assign 'closed topics' to close and re-open topics for posting
-* Delete topics and posts
-* Block members
+If you have any questions or feedback, feel encouraged to join us at [about bublaa] forum.
 
 == Installation ==
 
@@ -64,30 +52,26 @@ You can contact us for any questions, feedback and requests at info@bublaa.com o
 
 == Screenshots ==
 
-1. Basic view of the forum
-2. Opened sticky topic
-3. Posting a new post with images
-4. View of the member
+1. Basic view of the forum and login
+2. Another view of the forum and settings
+3. Basic view of the comments
+4. Another view of the comments
+5. Basic view of the activity widget
 
 == Changelog ==
-= 1.2.4.2 =
-* wrapping the plugin with an extra div#bublaa-container to make styling it easier
+= 2.0 =
+* Extended plugin for commenting
 
 = 1.2.4.1 =
 * minor changes
-
 = 1.2.4 =
 * Fixed a bug with sidebar widget
-
 = 1.2.3 =
 * Compatible up to 3.5.1
-
 = 1.2.2 =
 * Description changes and improved installation process
-
 = 1.2.1 =
 * Fixed upgrading issues
-
 = 1.2.0 =
 * Easier installation process and improved plugin settings. Added sidebar widget. Many issues and bugs fixed.
 
