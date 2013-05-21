@@ -14,13 +14,13 @@ Embed a bublaa forum into your site and replace your comment system with bublaa 
 Bublaa adds unique real-time discussions to your website. It combines forums and comments so that you are able to build a discussion community like never before on one platform. The plugin comes with three tools that work seamlessly together in real-time.
 
 = bublaa forum =
-Embed a forum into your site with bublaa forum. The unique interface makes it easy to navigate and have real-time discussions. See a live demo [here - http://bublaa.com/plugins/forum/].
+Embed a forum into your site with bublaa forum. The unique interface makes it easy to navigate and have real-time discussions. See a live demo [here](http://bublaa.com/plugins/forum/).
 
 = bublaa comments =
-Connect articles and your forum with bublaa comments. Write beautiful comments with rich text, pictures and video. See a live demo [here - http://bublaa.com/plugins/comments/].
+Connect articles and your forum with bublaa comments. Write beautiful comments with rich text, pictures and video. See a live demo [here](http://bublaa.com/plugins/comments/).
 
 = bublaa activity =
-Display active discussions on any page with bublaa activity widget. Drive even more people to the discussions. See a live demo [here - http://bublaa.com/plugins/activity/].
+Display active discussions on any page with bublaa activity widget. Drive even more people to the discussions. See a live demo [here](http://bublaa.com/plugins/activity/).
 
 With bublaa you can stop worrying about WordPress updates because your forum and comments are hosted with us. All public forums and comments are organized into a bublaa network that allows you to attract more people to your discussions and website.
 
