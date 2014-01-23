@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Embed a Bublaa Forum into your site and replace your comment system with Bublaa Comments (optional).
 
-== Description 
+== Description ==
 
 Bublaa adds unique real-time discussions to your website. It combines forums and comments so that you are able to build a discussion community like never before on one platform. The plugin comes with three tools that work seamlessly together in real-time.
 
