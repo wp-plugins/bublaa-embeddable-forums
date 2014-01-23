@@ -3,7 +3,7 @@ Contributors: bublaa
 Tags: bublaa, board, bulletin, comments, community, conversation, discussions, email, embed, embeddable, forum, hosted, message, mobile, network, notification, post, social, thread, topic, widget, wysiwyg
 Requires at least: 2.0.2
 Tested up to: 3.8
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,8 @@ You can contact us for any questions, feedback and requests at info@bublaa.com o
 5. Basic view of the activity widget
 
 == Changelog ==
+= 2.0.2 =
+* Fixed broken description
 = 2.0.1 =
 * Added an option to limit the number of topics visible when using Activity Widget. Multiple small updates. Compatible up to 3.8
 = 2.0 =
