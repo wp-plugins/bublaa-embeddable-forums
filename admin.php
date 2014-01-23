@@ -104,7 +104,7 @@
 		<div class="bublaa_row">
 		    <label>Enable:</label>
 		    <input name="comments_enabled" value="false" <?php if(isset($options['comments_enabled']) && $options['comments_enabled'] == true) { ?> checked="checked" <?php } ?> type="checkbox" />
-		    	<br/>Bublaa comments will replace your standard commenting system.
+		    	<br/>Bublaa Comments will replace your standard commenting system.
 		</div>
 	</div>
 
@@ -112,9 +112,18 @@
 		<h3>Activity widget</h3>
 		<div class="bublaa_row">
 		    <a href="widgets.php">Enable and edit widget here.</a>
-		    <br/>Use the bublaa activity widget to show the latest forum activity on any of your pages.
+		    <br/>Use the Bublaa Activity widget to show the latest forum activity on any of your pages.
 		</div>
 	</div>
+
+    <?php if($options['bubble'] && $options['page_id']){ ?>
+        <div class="bublaa_group">
+            <h3>Color scheme</h3>
+            <div class="bublaa_row">
+                <a target="_blank" href="<?php echo get_page_link($options['page_id']); ?>/#bublaa-/settings/plugins/">Click here to edit the background color and the overall color scheme of your forum and comments.</a>
+            </div>
+        </div>
+    <?php } ?>
 
 <div class="bublaa_row">
     <input type="submit" value="Save All Changes" /><span class="update-status"></span>

@@ -323,7 +323,7 @@ class BublaaWidget extends WP_Widget {
      * Constructor
      */
     function BublaaWidget() {
-        $widget_ops = array( 'height' => 600 );
+        $widget_ops = array( 'number_of_items' => 6 );
         parent::__construct( false, 'Bublaa - Latest Activity', $widget_ops );
     }
 
@@ -331,19 +331,19 @@ class BublaaWidget extends WP_Widget {
         $instance = $old_instance;
 
         //Strip tags from title and name to remove HTML
-        if(is_numeric( $new_instance['height'] ))
-            $instance['height'] = $new_instance['height'];
+        if(is_numeric( $new_instance['number_of_items'] ))
+            $instance['number_of_items'] = $new_instance['number_of_items'];
 
         return $instance;
     }
 
     function form($instance) {
-        $instance = wp_parse_args( (array) $instance, array( 'height' => '600' ) );
+        $instance = wp_parse_args( (array) $instance, array( 'number_of_items' => '6' ) );
         $height = $instance['height'];
 
         echo "<p>
-                <label for='" . $this->get_field_id('height') . "'>Height:
-                    <input class='bublaa_sidebar_height' id='" . $this->get_field_id('height') . "' name='" . $this->get_field_name('height') . "' type='text' value='" . esc_attr($height) . "' />
+                <label for='" . $this->get_field_id('number_of_items') . "'>Maximum numer of topics to load:
+                    <input class='bublaa_sidebar_height' id='" . $this->get_field_id('number_of_items') . "' name='" . $this->get_field_name('number_of_items') . "' type='text' value='" . esc_attr($number_of_items) . "' />
                 </label>
             </p>";
     }
@@ -357,19 +357,16 @@ class BublaaWidget extends WP_Widget {
         if(!$options['bubble'])
             return;
 
-        $widgetOptions = $this->widget_options;
+        $number_of_items = apply_filters( '6', $instance['number_of_items'] );
 
         $host = "http://bublaa.com";
 
         // final markup to init bublaa
         echo "
-            <div id='bublaa-sidebar'></div>
+            <div id='bublaa-sidebar' data-limit='" . $number_of_items . "'></div>
             <style>
                     #bublaa-sidebar {
-                        height: " . $widgetOptions['height'] ."px;
                         width: 100%;
-                        min-height: 300px;
-                        max-height: 600px;
                     }
             </style>
             <script type='text/javascript'>
