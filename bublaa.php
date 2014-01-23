@@ -4,7 +4,7 @@ Plugin Name: Bublaa Forums And Commenting
 Plugin URI: http://bublaa.com/#!/bubble/about-bublaa
 Description: Adds a Bublaa forum and comments to your WordPress site
 Author: Bublaa Team
-Version: 2.0
+Version: 2.0.1
 Author URI: http://bublaa.com/#!/bubble/about-bublaa
 */
 
