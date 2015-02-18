@@ -4,7 +4,8 @@ Template Name: Bublaa Template
 */
 global $bublaa;
 $bublaa_options = $bublaa->get_options();
-
+$fileHost = isset($bublaa_options["bublaa_file_host"]) ? $bublaa_options["bublaa_file_host"] : "//cdn.bublaa.com";
+$serviceHost = isset($bublaa_options['bublaa_service_host']) ? $bublaa_options['bublaa_service_host'] : 'http://www.bublaa.com';
 $id = $post->ID;
 $title = $post->post_title;
 $description = $post->post_modified . ' ' .  implode(
@@ -30,7 +31,8 @@ $description = $post->post_modified . ' ' .  implode(
 		window.bublaa = {
 		    config : {
 		        bubble : "<?php echo $bublaa_options["bubble"]; ?>", //REQUIRED
-		        forumUrl : "<?php echo get_page_link($bublaa_options['page_id']); ?>"
+		        forumUrl : "<?php echo get_page_link($bublaa_options['page_id']); ?>",
+                serviceHost : "<?php echo $serviceHost ?>"
 			}
 		};
 
@@ -38,7 +40,7 @@ $description = $post->post_modified . ' ' .  implode(
 		    var b = document.createElement('script');
 		    b.type = 'text/javascript';
 		    b.async = true;
-		    b.src = 'http://bublaa.com/dist/plugins.js';
+		    b.src = "<?php echo $fileHost ?>/dist/plugins.js";
 		    var s = document.getElementsByTagName('script')[0];
 		    s.parentNode.insertBefore(b, s);
 		})();

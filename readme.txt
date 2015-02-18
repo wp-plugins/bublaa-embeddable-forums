@@ -1,9 +1,9 @@
 === bublaa forum and comments ===
 Contributors: bublaa
 Tags: bublaa, board, bulletin, comments, community, conversation, discussions, email, embed, embeddable, forum, hosted, message, mobile, network, notification, post, social, thread, topic, widget, wysiwyg
-Requires at least: 2.0.2
-Tested up to: 3.8
-Stable tag: 2.0.2
+Requires at least: 2.0.3
+Tested up to: 4.1
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,15 +51,9 @@ This section describes how to install the plugin and get it working.
 
 You can contact us for any questions, feedback and requests at info@bublaa.com or at [about bublaa forum](http://bublaa.com/#!/bubble/about-bublaa)
 
-== Screenshots ==
-
-1. Basic view of the forum and login
-2. Another view of the forum and settings
-3. Basic view of the comments
-4. Another view of the comments
-5. Basic view of the activity widget
-
 == Changelog ==
+= 2.0.3 =
+* Updated supported version. Added a way to limit bublaa only for new articles. UI fixes for admin.
 = 2.0.2 =
 * Fixed broken description
 = 2.0.1 =
