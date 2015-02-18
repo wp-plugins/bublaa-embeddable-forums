@@ -16,8 +16,4 @@ $bublaa_options = $bublaa->get_options();
 ?>
 </div>
 
-<?php
-if($bublaa_options["showFooter"]) {
-	get_footer();
-}
-?>
+<?php get_footer(); ?>

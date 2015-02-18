@@ -4,7 +4,7 @@ Plugin Name: Bublaa Forums And Commenting
 Plugin URI: http://bublaa.com/#!/bubble/about-bublaa
 Description: Adds a Bublaa forum and comments to your WordPress site
 Author: Bublaa Team
-Version: 2.0
+Version: 2.0.3
 Author URI: http://bublaa.com/#!/bubble/about-bublaa
 */
 
@@ -35,10 +35,19 @@ function init_bublaa_comments() {
 	global $bublaa;
 	$options = $bublaa->get_options();
 	if($options && isset($options["comments_enabled"]) && $options["comments_enabled"]) {
+
 		global $bublaaComments;
+        global $post;
 		add_filter('comments_number', array($bublaaComments, 'comments_number'));
+        add_action('wp_enqueue_scripts', array($bublaaComments, 'load_scripts'));
+
+        $showCommentsAfterDate = isset($options["useCommentsAfter"]) ? $options["useCommentsAfter"] : false;
+        if($showCommentsAfterDate && isset($post)) {
+            $articlePublishedDate = strtotime($post->post_date);
+            if($showCommentsAfterDate > $articlePublishedDate)
+                return;
+        }
 		add_filter('comments_template', array($bublaaComments, 'load_comments_template'));
-		add_action('wp_enqueue_scripts', array($bublaaComments, 'load_scripts'));
 	}
 }
 add_action('template_redirect', 'init_bublaa_comments');

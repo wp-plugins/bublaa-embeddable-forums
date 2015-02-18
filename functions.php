@@ -9,9 +9,11 @@ class Bublaa {
         return array(
             "page_id" => null,
             "bubble" => "",
-            "showFooter" => false,
             "comments_enabled" => true,
-            "page_changed" => false
+            "page_changed" => false,
+            "useCommentsAfter" => false,
+            "bublaa_file_host" => 'http://cdn.bublaa.com',
+            "bublaa_service_host" => 'http://www.bublaa.com'
         );
     }
 
@@ -68,7 +70,7 @@ class Bublaa {
     function menu()
     {
         // Create menu tab
-        add_menu_page('Bublaa Plugin Settings', 'Bublaa', 'edit_pages', "bublaa", array($this,'admin'), 'http://bublaa.com/favicon.ico');
+        add_menu_page('Bublaa Plugin Settings', 'Bublaa', 'edit_pages', "bublaa", array($this,'admin'), 'http://bublaa.com/images/favicons/favicon-16x16.png');
     }
 
     /**
@@ -118,12 +120,12 @@ class Bublaa {
     function init_embedded (){
         $options = $this->get_options();
 
-        $host = "http://bublaa.com";
+        $fileHost = isset($options["bublaa_file_host"]) ? $options["bublaa_file_host"] : "//cdn.bublaa.com";
+        $serviceHost = isset($options["bublaa_service_host"]) ? $options["bublaa_service_host"] : "http://www.bublaa.com";
 
         $notFound = "embeddedNotFound";
         $saveNewBubbleToWordpress = "false";
         if(current_user_can('edit_pages') && (!isset($options["bubble"]) || empty($options["bubble"]))) {
-            // backbone route for wp admin to create a new bubble - NOT MOBILE OPTIMIZED
             $notFound = "embeddedCreateNew";
             // function to save bublaa plugin option 'bubble' via ajax
             $saveNewBubbleToWordpress = "
@@ -162,13 +164,14 @@ class Bublaa {
                     config : {
                         bubble     : '" . $options["bubble"] ."',
                         noBubbleRoute : '". $notFound . "',
+                        serviceHost : '" . $serviceHost . "',
                         bubbleCreatedSuccess : " . $saveNewBubbleToWordpress . "
                     }
                 };
 
                 (function() {
                     var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
-                    b.src = '" . $host ."/dist/plugins.js';
+                    b.src = '" . $fileHost ."/dist/plugins.js';
                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(b, s);
                 })();
             </script>
@@ -182,7 +185,7 @@ class Bublaa {
      */
     function load_template() {
         global $post;
-        if($post->post_type == 'page') {
+        if($post && $post->post_type == 'page') {
             $options = $this->get_options();
             if($options["page_id"] == $post->ID) {
                 include_once dirname(__FILE__) . '/bublaa-template.php';
@@ -274,11 +277,11 @@ class Bublaa {
 
         $data["bubble"] = $_POST["bubble"];
 
-        if(isset($_POST["showFooter"]) && $_POST["showFooter"] == true) {
-            $data["showFooter"] = true;
+        if(isset($_POST["useCommentsAfter"]) && strlen($_POST["useCommentsAfter"]) > 0) {
+            $data["useCommentsAfter"] = strtotime($_POST["useCommentsAfter"]);
         }
         else {
-            $data["showFooter"] = false;
+            $data["useCommentsAfter"] = false;
         }
 
         if(isset($_POST["page_id"])) {
@@ -323,7 +326,7 @@ class BublaaWidget extends WP_Widget {
      * Constructor
      */
     function BublaaWidget() {
-        $widget_ops = array( 'height' => 600 );
+        $widget_ops = array( 'number_of_items' => 6 );
         parent::__construct( false, 'Bublaa - Latest Activity', $widget_ops );
     }
 
@@ -331,19 +334,19 @@ class BublaaWidget extends WP_Widget {
         $instance = $old_instance;
 
         //Strip tags from title and name to remove HTML
-        if(is_numeric( $new_instance['height'] ))
-            $instance['height'] = $new_instance['height'];
+        if(is_numeric( $new_instance['number_of_items'] ))
+            $instance['number_of_items'] = $new_instance['number_of_items'];
 
         return $instance;
     }
 
     function form($instance) {
-        $instance = wp_parse_args( (array) $instance, array( 'height' => '600' ) );
+        $instance = wp_parse_args( (array) $instance, array( 'number_of_items' => '6' ) );
         $height = $instance['height'];
 
         echo "<p>
-                <label for='" . $this->get_field_id('height') . "'>Height:
-                    <input class='bublaa_sidebar_height' id='" . $this->get_field_id('height') . "' name='" . $this->get_field_name('height') . "' type='text' value='" . esc_attr($height) . "' />
+                <label for='" . $this->get_field_id('number_of_items') . "'>Maximum numer of topics to load:
+                    <input class='bublaa_sidebar_height' id='" . $this->get_field_id('number_of_items') . "' name='" . $this->get_field_name('number_of_items') . "' type='text' value='" . esc_attr($number_of_items) . "' />
                 </label>
             </p>";
     }
@@ -357,32 +360,30 @@ class BublaaWidget extends WP_Widget {
         if(!$options['bubble'])
             return;
 
-        $widgetOptions = $this->widget_options;
+        $number_of_items = apply_filters( '6', isset($instance['number_of_items']) ? $instance['number_of_items'] : 6);
 
-        $host = "http://bublaa.com";
+        $fileHost = isset($options["bublaa_file_host"]) ? $options["bublaa_file_host"] : "//cdn.bublaa.com";
 
         // final markup to init bublaa
         echo "
-            <div id='bublaa-sidebar'></div>
+            <div id='bublaa-sidebar' data-limit='" . $number_of_items . "'></div>
             <style>
                     #bublaa-sidebar {
-                        height: " . $widgetOptions['height'] ."px;
                         width: 100%;
-                        min-height: 300px;
-                        max-height: 600px;
                     }
             </style>
             <script type='text/javascript'>
                 window.bublaa = {
                     config : {
                         bubble     : '" . $options["bubble"] ."',
-                        forumUrl: '" . get_page_link($options['page_id']) ."'
+                        forumUrl: '" . get_page_link($options['page_id']) ."',
+                        serviceHost : '" . isset($options["bublaa_service_host"]) ? $options["bublaa_service_host"] : 'http://www.bublaa.com' . "'
                     }
                 };
 
                 (function() {
                     var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
-                    b.src = '" . $host ."/dist/plugins.js';
+                    b.src = '" . $fileHost ."/dist/plugins.js';
                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(b, s);
                 })();
             </script>
@@ -413,7 +414,13 @@ class BublaaComments {
     }
 
     function load_scripts() {
-        wp_enqueue_script('bublaa-comments-count', 'http://bublaa.com/dist/plugins.js');
+        global $bublaa;
+
+        $options = $bublaa->get_options();
+
+        $fileHost = isset($options["bublaa_file_host"]) ? $options["bublaa_file_host"] : "//cdn.bublaa.com";
+
+        wp_enqueue_script('bublaa-comments-count', $fileHost+'/dist/plugins.js');
     }
 }
 $bublaaComments = new BublaaComments();
