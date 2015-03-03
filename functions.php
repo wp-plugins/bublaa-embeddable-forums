@@ -342,17 +342,14 @@ class BublaaWidget extends WP_Widget {
 
     function form($instance) {
         $instance = wp_parse_args( (array) $instance, array( 'number_of_items' => '6' ) );
-        $height = $instance['height'];
-
         echo "<p>
-                <label for='" . $this->get_field_id('number_of_items') . "'>Maximum numer of topics to load:
-                    <input class='bublaa_sidebar_height' id='" . $this->get_field_id('number_of_items') . "' name='" . $this->get_field_name('number_of_items') . "' type='text' value='" . esc_attr($number_of_items) . "' />
+                <label for='" . $instance['number_of_items'] . "'>Maximum numer of topics to load:
+                    <input class='bublaa_sidebar_height' id='" . $instance['number_of_items'] . "' name='" . $instance['number_of_items'] . "' type='text' value='" . esc_attr($instance['number_of_items']) . "' />
                 </label>
             </p>";
     }
 
     function widget($args, $instance) {
-
         // reuse my plugin's code
         global $bublaa;
         $options = $bublaa->get_options();
@@ -363,6 +360,7 @@ class BublaaWidget extends WP_Widget {
         $number_of_items = apply_filters( '6', isset($instance['number_of_items']) ? $instance['number_of_items'] : 6);
 
         $fileHost = isset($options["bublaa_file_host"]) ? $options["bublaa_file_host"] : "//cdn.bublaa.com";
+        $serviceHost = isset($options["bublaa_service_host"]) ? $options["bublaa_service_host"] : "http://www.bublaa.com";
 
         // final markup to init bublaa
         echo "
@@ -377,7 +375,7 @@ class BublaaWidget extends WP_Widget {
                     config : {
                         bubble     : '" . $options["bubble"] ."',
                         forumUrl: '" . get_page_link($options['page_id']) ."',
-                        serviceHost : '" . isset($options["bublaa_service_host"]) ? $options["bublaa_service_host"] : 'http://www.bublaa.com' . "'
+                        serviceHost : '" . $serviceHost . "'
                     }
                 };
 
