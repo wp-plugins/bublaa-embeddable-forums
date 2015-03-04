@@ -404,10 +404,19 @@ class BublaaComments {
         global $post;
         global $bublaa;
         $options = $bublaa->get_options();
-        if(isset($options["bubble"])) {
-            return "<span style='display:none;' class='bublaa-comments-count' data-forum='" . $options["bubble"] . "' data-id='" . $post->ID . "'/>";
+
+        if(!isset($options["bubble"])) {
+            return $text;
         }
-        return;
+
+        $showCommentsAfterDate = isset($options["useCommentsAfter"]) ? $options["useCommentsAfter"] : false;
+        if($showCommentsAfterDate && isset($post)) {
+            $articlePublishedDate = strtotime($post->post_date);
+            if($showCommentsAfterDate > $articlePublishedDate)
+                return $text;
+        }
+
+        return "<span style='display:none;' class='bublaa-comments-count' data-forum='" . $options["bubble"] . "' data-id='" . $post->ID . "'/>";
 
     }
 
