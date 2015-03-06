@@ -1,9 +1,9 @@
 === bublaa forum and comments ===
 Contributors: bublaa
 Tags: bublaa, board, bulletin, comments, community, conversation, discussions, email, embed, embeddable, forum, hosted, message, mobile, network, notification, post, social, thread, topic, widget, wysiwyg
-Requires at least: 2.0.5
-Tested up to: 4.1
-Stable tag: 2.0.5
+Requires at least: 2.0.6
+Tested up to: 4.1.1
+Stable tag: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

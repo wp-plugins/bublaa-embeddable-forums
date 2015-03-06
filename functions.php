@@ -427,7 +427,7 @@ class BublaaComments {
 
         $fileHost = isset($options["bublaa_file_host"]) ? $options["bublaa_file_host"] : "//cdn.bublaa.com";
 
-        wp_enqueue_script('bublaa-comments-count', $fileHost+'/dist/plugins.js');
+        wp_enqueue_script('bublaa-comments-count', $fileHost.'/dist/plugins.js');
     }
 }
 $bublaaComments = new BublaaComments();
